@@ -24,6 +24,14 @@ use Symfony\Component\HttpFoundation\Request;
 class BotController extends Controller
 {
     /**
+     * @Route("/hola", name="index")
+     */
+    public function indexAction()
+    {
+        return $this->render('default/index.html.twig');
+    }
+
+    /**
      * @Route("/tryBot", name="bot_try")
      * @param Request $request
      */
@@ -100,7 +108,7 @@ class BotController extends Controller
         } catch (TelegramException $e) {
             /** @var Logger $telegramLogger */
             $telegramLogger = $this->get("monolog.logger.telegram");
-            $telegramLogger->info("Ha ocurrido un error: ".$e->getMessage());
+            $telegramLogger->info("Ha ocurrido un error: " . $e->getMessage());
         }
 
         return new JsonResponse([

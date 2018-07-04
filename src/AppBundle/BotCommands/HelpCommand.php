@@ -45,7 +45,7 @@ class HelpCommand extends UserCommand
             $text .= '_Aquí tienes la lista de comandos con todo lo que puedo hacer_.' . "\n";
             $text .= "\n";
             foreach ($commands as $command) {
-                $text .= '/' . $command->getName() . ' - ' . $command->getDescription() . "\n";
+                $text .= '/' . $command->getName()  . '  *¿Cómo se usa? -> ' .  $command->getUsage() . '* - ' . $command->getDescription() . "\n" . "\n";
             }
 
             $text .= "\n" . 'Para saber que hace un comando: /help <comando>';

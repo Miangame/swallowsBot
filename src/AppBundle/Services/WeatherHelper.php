@@ -8,7 +8,7 @@ use Cmfcmf\OpenWeatherMap\Exception as OWMException;
 
 class WeatherHelper 
 {
-    public function getForecastWeather() {
+    public function getForecastWeather($option) {
 
                                 
                 // Language of data (try your own language here!):
@@ -22,7 +22,7 @@ class WeatherHelper
         $owm = new OpenWeatherMap('1ee6d5b605e1678f54b5e24aa2f32acc');
 
         try {
-            $weather = $owm->getWeather('Aguilar de la frontera', $units, $lang);
+            $weather = $owm->getWeather($option, $units, $lang);
         } catch(OWMException $e) {
             echo 'OpenWeatherMap exception: ' . $e->getMessage() . ' (Code ' . $e->getCode() . ').';
         } catch(\Exception $e) {

@@ -17,3 +17,6 @@ parameters:
 
     # A secret key that's used to generate certain security-related tokens
     secret: ThisTokenIsNotSoSecretChangeIt
+    telegram_api_key: 564224053:AAFB99krWbaBdsZggd6ukxo0xTGqfwHk_I8
+    telegram_bot_name: swallows
+    url_server: https://c51e4e46.ngrok.io

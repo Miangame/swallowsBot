@@ -65,3 +65,12 @@ swiftmailer:
     username: '%mailer_user%'
     password: '%mailer_password%'
     spool: { type: memory }
+
+dwr_open_weather:
+    api_key: 1ee6d5b605e1678f54b5e24aa2f32acc
+
+piano_solo_weather:
+    api_key: 1ee6d5b605e1678f54b5e24aa2f32acc # Required (OpenWeatherMap Api Key)
+    options:
+        download_csv: false # Default True
+        cache: true # Default False (To use cache the system needs Php-Apc cache)

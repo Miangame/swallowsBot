@@ -1,0 +1,43 @@
+<?php
+
+namespace AppBundle\Services;
+
+//api openWeather
+use Cmfcmf\OpenWeatherMap;
+use Cmfcmf\OpenWeatherMap\Exception as OWMException;
+
+class WeatherHelper 
+{
+    public function getForecastWeather($option) {
+
+        if ($option != null) {
+            // Language of data (try your own language here!):
+            $lang = 'es';
+
+            // Units (can be 'metric' or 'imperial' [default]):
+            $units = 'metric';
+
+            // Create OpenWeatherMap object. 
+            // Don't use caching (take a look into Examples/Cache.php to see how it works).
+            $owm = new OpenWeatherMap(open_weather_api);
+
+            try {
+                $weather = $owm->getWeather($option, $units, $lang);
+            } catch(OWMException $e) {
+                echo 'OpenWeatherMap exception: ' . $e->getMessage() . ' (Code ' . $e->getCode() . ').';
+            } catch(\Exception $e) {
+                echo 'General exception: ' . $e->getMessage() . ' (Code ' . $e->getCode() . ').';
+            }
+
+            return $weather;
+        }else {
+            return null;
+        }
+        
+
+    }
+
+}
+
+
+?>

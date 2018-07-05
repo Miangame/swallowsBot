@@ -19,8 +19,6 @@ class AppKernel extends Kernel
             new AppBundle\AppBundle(),
 
             // My bundles
-            new Dwr\OpenWeatherBundle\DwrOpenWeatherBundle(),
-            new PianoSolo\WeatherBundle\PianoSoloWeatherBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

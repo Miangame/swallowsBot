@@ -26,16 +26,20 @@ class TiempoCommand extends UserCommand
     public function execute()
     {
 
+        
+        
         /** @var Message $message */
         $message = $this->getMessage();
         $chat_id = $message->getChat()->getId();
         $option = trim($message->getText(true));
 
+        
 
+        //$weatherHelper = new WeatherHelper(getContainer());
+        $weatherHelper = $this->get('app.weatherHelper');
+        if ($option != null AND $weatherHelper->getForecastWeather($option) != null) {
+           
 
-        $weatherHelper = new WeatherHelper();
-
-        if ($option != null AND getForecastWeather($option) != null) {
             $forecastWeather = $weatherHelper->getForecastWeather($option);
         
             $city = $forecastWeather->city->name;
@@ -74,6 +78,7 @@ class TiempoCommand extends UserCommand
         $data = [];
         $data['chat_id'] = $chat_id;
         $data['text'] = $text;
+        $data['image'] = "{{ asset('images/clouds.jpg') }}";
         $data['parse_mode'] = "Markdown";
 
         return Request::sendMessage($data);

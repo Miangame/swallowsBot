@@ -6,11 +6,23 @@ namespace AppBundle\Services;
 use Cmfcmf\OpenWeatherMap;
 use Cmfcmf\OpenWeatherMap\Exception as OWMException;
 
-class WeatherHelper 
-{
-    public function getForecastWeather($option) {
+use Symfony\Component\DependencyInjection\ContainerInterface as Container;
 
-        if ($option != null) {
+
+
+class WeatherHelper
+{
+
+    protected $api;
+
+    public function __construct($api)
+    {
+        $this->api = $api;
+    }
+    
+    public function getForecastWeather($city) {
+
+        if ($city != null) {
             // Language of data (try your own language here!):
             $lang = 'es';
 
@@ -19,10 +31,13 @@ class WeatherHelper
 
             // Create OpenWeatherMap object. 
             // Don't use caching (take a look into Examples/Cache.php to see how it works).
-            $owm = new OpenWeatherMap(open_weather_api);
+            
+            $owm = new OpenWeatherMap($this->api);
+            dump($this->api);
+            die();
 
             try {
-                $weather = $owm->getWeather($option, $units, $lang);
+                $weather = $owm->getWeather($city, $units, $lang);
             } catch(OWMException $e) {
                 echo 'OpenWeatherMap exception: ' . $e->getMessage() . ' (Code ' . $e->getCode() . ').';
             } catch(\Exception $e) {
@@ -36,7 +51,6 @@ class WeatherHelper
         
 
     }
-
 }
 
 

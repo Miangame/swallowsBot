@@ -9,7 +9,6 @@ use Cmfcmf\OpenWeatherMap\Exception as OWMException;
 use Symfony\Component\DependencyInjection\ContainerInterface as Container;
 
 
-
 class WeatherHelper
 {
 
@@ -19,8 +18,9 @@ class WeatherHelper
     {
         $this->api = $api;
     }
-    
-    public function getForecastWeather($city) {
+
+    public function getForecastWeather($city)
+    {
 
         if ($city != null) {
             // Language of data (try your own language here!):
@@ -31,24 +31,23 @@ class WeatherHelper
 
             // Create OpenWeatherMap object. 
             // Don't use caching (take a look into Examples/Cache.php to see how it works).
-            
+
             $owm = new OpenWeatherMap($this->api);
-            dump($this->api);
-            die();
+
 
             try {
                 $weather = $owm->getWeather($city, $units, $lang);
-            } catch(OWMException $e) {
+            } catch (OWMException $e) {
                 echo 'OpenWeatherMap exception: ' . $e->getMessage() . ' (Code ' . $e->getCode() . ').';
-            } catch(\Exception $e) {
+            } catch (\Exception $e) {
                 echo 'General exception: ' . $e->getMessage() . ' (Code ' . $e->getCode() . ').';
             }
 
             return $weather;
-        }else {
+        } else {
             return null;
         }
-        
+
 
     }
 }

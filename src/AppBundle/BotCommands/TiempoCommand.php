@@ -1,4 +1,5 @@
 <?php
+
 namespace AppBundle\BotCommands;
 
 use Longman\TelegramBot\Commands\UserCommand;
@@ -26,24 +27,22 @@ class TiempoCommand extends UserCommand
     public function execute()
     {
 
-        
-        
         /** @var Message $message */
         $message = $this->getMessage();
         $chat_id = $message->getChat()->getId();
         $option = trim($message->getText(true));
 
-        
 
         //$weatherHelper = new WeatherHelper(getContainer());
-        $weatherHelper = $this->get('app.weatherHelper');
+        $weatherHelper = $this->telegram->container->get('app.weatherHelper');
+
         if ($option != null AND $weatherHelper->getForecastWeather($option) != null) {
-           
+
 
             $forecastWeather = $weatherHelper->getForecastWeather($option);
-        
+
             $city = $forecastWeather->city->name;
-    
+
             $forecast = $forecastWeather->weather->description;
             $acTemp = $forecastWeather->temperature->now;
             $maxTemp = $forecastWeather->temperature->max;
@@ -55,24 +54,24 @@ class TiempoCommand extends UserCommand
             $clouds = $forecastWeather->clouds;
             $precipitation = $forecastWeather->precipitation;
 
-            $actuallyTemperature = str_replace('&deg;C', "℃", $acTemp );
-            $maxTemperature = str_replace('&deg;C', "℃", $maxTemp );
-            $minTemperature = str_replace('&deg;C', "℃", $minTemp );
-    
+            $actuallyTemperature = str_replace('&deg;C', "℃", $acTemp);
+            $maxTemperature = str_replace('&deg;C', "℃", $maxTemp);
+            $minTemperature = str_replace('&deg;C', "℃", $minTemp);
+
             $text = 'Previsión meteorológica para *' . $city . "*\n" . "\n";
-            $text .= ' *Previsión* -> ' . $forecast . "\n" ;
+            $text .= ' *Previsión* -> ' . $forecast . "\n";
             $text .= ' *TempActual* -> ' . $actuallyTemperature . "\n";
             $text .= ' *TempMax* -> ' . $maxTemperature . "\n";
             $text .= ' *TempMin* -> ' . $minTemperature . "\n";
             $text .= ' *Humedad* -> ' . $humidity . "\n";
             $text .= ' *Presión* -> ' . $pressure . "\n";
-            $text .= ' *Viento* -> ' . $windSpeed . ', *Dirección* -> ' . $windDirection . "\n";
+            $text .= ' *Viento* -> ' . $windSpeed . "\n";
+            $text .= ' *Dirección* -> ' . $windDirection . "\n";
             $text .= ' *Nubes* -> ' . $clouds . "\n";
-            $text .= ' *Lluvia* -> ' . $precipitation ;
-        }else {
+            $text .= ' *Lluvia* -> ' . $precipitation;
+        } else {
             $text = 'Formato del comando incorrecto, mire la ayuda con el comando /help';
         }
-        
 
 
         $data = [];
@@ -84,7 +83,5 @@ class TiempoCommand extends UserCommand
         return Request::sendMessage($data);
     }
 
-    
 
-  
 }

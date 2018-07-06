@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "bedac1a8a12926551e56cb2222e1939e",
+    "content-hash": "3c16c5d95e5357acb748e9bb1aa1bbcb",
     "packages": [
         {
             "name": "cmfcmf/openweathermap-php-api",
@@ -886,57 +886,6 @@
             "time": "2017-12-17T02:57:51+00:00"
         },
         {
-            "name": "dwr/openweather-bundle",
-            "version": "2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/dariuszwrzesien/DwrOpenWeatherBundle.git",
-                "reference": "60469f214fc9f954a51dd100f35bced955b8100c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/dariuszwrzesien/DwrOpenWeatherBundle/zipball/60469f214fc9f954a51dd100f35bced955b8100c",
-                "reference": "60469f214fc9f954a51dd100f35bced955b8100c",
-                "shasum": ""
-            },
-            "require": {
-                "guzzlehttp/guzzle": "~6.0",
-                "symfony/framework-bundle": "3.*",
-                "symfony/symfony": "3.*",
-                "symfony/twig-bundle": "3.*"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "5.7.*",
-                "satooshi/php-coveralls": "dev-master"
-            },
-            "type": "symfony-bundle",
-            "autoload": {
-                "psr-4": {
-                    "Dwr\\OpenWeatherBundle\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Dariusz Wrzesien",
-                    "email": "dariuszwrzesien@gmail.com",
-                    "homepage": "https://github.com/dariuszwrzesien/DwrOpenWeatherBundle"
-                }
-            ],
-            "description": "Symfony3 bundle wraps Open Weather API.",
-            "homepage": "https://github.com/dariuszwrzesien/DwrOpenWeatherBundle",
-            "keywords": [
-                "forecast",
-                "open weather api",
-                "weather",
-                "weather rest api"
-            ],
-            "time": "2017-03-01T14:55:08+00:00"
-        },
-        {
             "name": "fig/link-util",
             "version": "1.0.0",
             "source": {
@@ -1405,16 +1354,16 @@
         },
         {
             "name": "paragonie/random_compat",
-            "version": "v2.0.15",
+            "version": "v2.0.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/random_compat.git",
-                "reference": "10bcb46e8f3d365170f6de9d05245aa066b81f09"
+                "reference": "29af24f25bab834fcbb38ad2a69fa93b867e070d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/10bcb46e8f3d365170f6de9d05245aa066b81f09",
-                "reference": "10bcb46e8f3d365170f6de9d05245aa066b81f09",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/29af24f25bab834fcbb38ad2a69fa93b867e070d",
+                "reference": "29af24f25bab834fcbb38ad2a69fa93b867e070d",
                 "shasum": ""
             },
             "require": {
@@ -1450,49 +1399,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2018-06-08T15:26:40+00:00"
-        },
-        {
-            "name": "pianosolo/weather-bundle",
-            "version": "v2.1.0",
-            "target-dir": "PianoSolo/WeatherBundle",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/codebach/PianoSoloWeatherBundle.git",
-                "reference": "40c496dd850d5d6c5e6b85338b7b02edf261941f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/codebach/PianoSoloWeatherBundle/zipball/40c496dd850d5d6c5e6b85338b7b02edf261941f",
-                "reference": "40c496dd850d5d6c5e6b85338b7b02edf261941f",
-                "shasum": ""
-            },
-            "require": {
-                "guzzlehttp/guzzle": "^6.2",
-                "php": ">=5.3.9",
-                "symfony/symfony": "~2.7|~3.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~4.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "PianoSolo\\WeatherBundle": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Ahmet Akbana",
-                    "email": "ahmetakbana@gmail.com"
-                }
-            ],
-            "description": "Weather Bundle of Symfony",
-            "time": "2017-07-31T15:43:51+00:00"
+            "time": "2018-07-04T16:31:37+00:00"
         },
         {
             "name": "psr/cache",

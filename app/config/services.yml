@@ -7,6 +7,4 @@ services:
     # My services
     app.weatherHelper:
         class: AppBundle\Services\WeatherHelper
-        arguments: ['%open_weather_api%']
-
-
+        arguments: ["%open_weather_api%"]

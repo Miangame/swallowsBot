@@ -115,4 +115,14 @@ class BotController extends Controller
             'ok' => true
         ]);
     }
+
+    /**
+     * @Route("/clear/{code}", name="bot_clear")
+     */
+    public function clearAction($code)
+    {
+        return new JsonResponse([
+            'ok' => true
+        ]);
+    }
 }

@@ -8,3 +8,6 @@ services:
     app.weatherHelper:
         class: AppBundle\Services\WeatherHelper
         arguments: ["%open_weather_api%"]
+    app.newsHelper:
+        class: AppBundle\Services\NewsHelper
+        arguments: ["@doctrine.orm.entity_manager"]

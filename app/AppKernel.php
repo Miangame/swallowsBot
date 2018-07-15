@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new AppBundle\AppBundle(),
 
             // My bundles
+            new Debril\RssAtomBundle\DebrilRssAtomBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
